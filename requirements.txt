@@ -1,0 +1,7 @@
+Flask
+pandas
+openpyxl
+beautifulsoup4
+lxml
+selenium
+Werkzeug
