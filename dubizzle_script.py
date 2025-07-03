@@ -43,8 +43,10 @@ config = pd.read_csv(config_path, usecols=["make", "year", "dubizzle_model"], lo
 # Filter out rows where dubizzle_model is blank or NaN
 config = config[config["dubizzle_model"].notna() & (config["dubizzle_model"].str.strip() != "")]
 
-today_str = datetime.today().strftime("%d%m%Y")
-filename = Path.cwd() / f"output/dubizzle_rentals_{today_str}.xlsx"
+# today_str = datetime.today().strftime("%d%m%Y")
+# filename = Path.cwd() / f"output/dubizzle_rentals_{today_str}.xlsx"
+filename = Path.cwd() / "output/dubizzle_rentals.xlsx"
+
 
 # ========== BROWSER FACTORY ==========
 

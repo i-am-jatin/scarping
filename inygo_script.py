@@ -44,8 +44,10 @@ config = pd.read_csv(config_path, usecols=["make", "year", "invygo_model"], low_
 # Filter out rows where invygo_model is blank or NaN
 config = config[config["invygo_model"].notna() & (config["invygo_model"].str.strip() != "")]
 
-today_str = datetime.today().strftime("%d%m%Y")
-filename = Path.cwd() / f"output/invygo_rentals_{today_str}.xlsx"
+# today_str = datetime.today().strftime("%d%m%Y")
+# filename = Path.cwd() / f"output/invygo_rentals_{today_str}.xlsx"
+filename = Path.cwd() / "output/inygo_rentals.xlsx"
+
 
 # ========== BROWSER FACTORY ==========
 def make_fast_firefox(headless=True):

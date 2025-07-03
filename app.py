@@ -2,6 +2,15 @@ from flask import Flask, request, jsonify, send_from_directory, render_template
 import os
 import subprocess
 from werkzeug.utils import secure_filename
+from pymongo import MongoClient
+from datetime import datetime
+
+# MongoDB setup
+mongo_uri = "mongodb+srv://gaurav444:gaurav444@cluster0.iocsbho.mongodb.net/"
+client = MongoClient(mongo_uri)
+db = client['test']  # Database name
+collection = db['DubaiScrapeLogs']    # Collection name
+
 
 app = Flask(__name__)
 
@@ -40,7 +49,7 @@ def run_scraper():
         'inygo': 'inygo_script.py',
         'dubizzle': 'dubizzle_script.py',
     }
-
+      
     try:
         executed = []
         for scr in script_list:
@@ -51,10 +60,36 @@ def run_scraper():
         
         if not executed:
             return "❌ No valid script selected.", 400
-        
+
+        # ✅ Store in MongoDB
+        collection.insert_one({
+            "scripts_run": executed,
+            "scrape": True,
+            "timestamp": datetime.utcnow()
+        })
+
         return f"✅ Scraping completed for: {', '.join(executed).capitalize()}"
+    
     except subprocess.CalledProcessError as e:
         return f"❌ Error running script: {e}", 500
+
+
+    # try:
+    #     executed = []
+    #     for scr in script_list:
+    #         scr = scr.strip()
+    #         if scr in scripts:
+    #             subprocess.run(['python', scripts[scr]], check=True)
+    #             executed.append(scr)
+        
+    #     if not executed:
+    #         return "❌ No valid script selected.", 400
+        
+    #     return f"✅ Scraping completed for: {', '.join(executed).capitalize()}"
+    # except subprocess.CalledProcessError as e:
+    #     return f"❌ Error running script: {e}", 500
+
+     
 
 # ---- Endpoint: List output files ----
 @app.route('/list-outputs')
