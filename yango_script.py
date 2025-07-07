@@ -436,7 +436,7 @@ def scrape_main_for_make_model(make, model, logger):
         "monthly": f"https://drive.yango.com/search/all/{make}/{model}?since={since}&until={until}&duration_months=9&is_monthly=true"
     }
 
-    driver = make_fast_firefox(headless=True)
+    driver = make_fast_firefox(headless=False)
     local_main_dataframes, local_detail_dicts, local_seen_urls, broken_urls = [], [], set(), []
 
     try:

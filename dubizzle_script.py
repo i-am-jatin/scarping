@@ -50,7 +50,7 @@ filename = Path.cwd() / "output/dubizzle_rentals.xlsx"
 
 # ========== BROWSER FACTORY ==========
 
-def make_fast_firefox(headless=True):
+def make_fast_firefox(headless=False):
     options = Options()
     options.headless = headless
 

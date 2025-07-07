@@ -50,7 +50,7 @@ filename = Path.cwd() / "output/inygo_rentals.xlsx"
 
 
 # ========== BROWSER FACTORY ==========
-def make_fast_firefox(headless=True):
+def make_fast_firefox(headless=False):
     options = Options()
     options.headless = headless
     options.page_load_strategy = "eager"
