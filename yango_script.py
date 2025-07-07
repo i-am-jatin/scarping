@@ -81,10 +81,11 @@ def make_fast_firefox(headless=True):
     options.set_preference("general.smoothScroll", False)
     options.set_preference("ui.prefersReducedMotion", 1)
 
-    options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
-    service = Service(executable_path=r"C:\drivers\geckodriver.exe")
+    # options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
+    # service = Service(executable_path=r"C:\drivers\geckodriver.exe")
     
-    return webdriver.Firefox(service=service, options=options)
+    # return webdriver.Firefox(service=service, options=options)
+    return webdriver.Firefox(options=options)
 
 # ========== DATA CLEANING ==========
 def extract_numeric(text):
@@ -436,7 +437,7 @@ def scrape_main_for_make_model(make, model, logger):
         "monthly": f"https://drive.yango.com/search/all/{make}/{model}?since={since}&until={until}&duration_months=9&is_monthly=true"
     }
 
-    driver = make_fast_firefox(headless=False)
+    driver = make_fast_firefox(headless=True)
     local_main_dataframes, local_detail_dicts, local_seen_urls, broken_urls = [], [], set(), []
 
     try:

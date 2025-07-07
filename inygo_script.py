@@ -50,7 +50,7 @@ filename = Path.cwd() / "output/inygo_rentals.xlsx"
 
 
 # ========== BROWSER FACTORY ==========
-def make_fast_firefox(headless=False):
+def make_fast_firefox(headless=True):
     options = Options()
     options.headless = headless
     options.page_load_strategy = "eager"
@@ -67,11 +67,11 @@ def make_fast_firefox(headless=False):
     options.set_preference("general.smoothScroll", False)
     options.set_preference("ui.prefersReducedMotion", 1)
 
-    options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
-    service = Service(executable_path=r"C:\drivers\geckodriver.exe")
-    
-    return webdriver.Firefox(service=service, options=options)
+    # options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
+    # service = Service(executable_path=r"C:\drivers\geckodriver.exe")
 
+    # return webdriver.Firefox(service=service, options=options)
+    return webdriver.Firefox(options=options)
 # ========== DATA CLEANING HELPERS ==========
 def extract_make_model_from_url(url):
     url = unquote(url)

@@ -50,7 +50,7 @@ filename = Path.cwd() / "output/dubizzle_rentals.xlsx"
 
 # ========== BROWSER FACTORY ==========
 
-def make_fast_firefox(headless=False):
+def make_fast_firefox(headless=True):
     options = Options()
     options.headless = headless
 
@@ -89,11 +89,11 @@ def make_fast_firefox(headless=False):
     options.set_preference("gfx.downloadable_fonts.enabled", False)
 
     # Set paths
-    options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
-    service = Service(executable_path=r"C:\drivers\geckodriver.exe")
+    # options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
+    # service = Service(executable_path=r"C:\drivers\geckodriver.exe")
 
-    return webdriver.Firefox(service=service, options=options)
-
+    # return webdriver.Firefox(service=service, options=options)
+    return webdriver.Firefox(options=options)
 # ========== DATA CLEANING HELPERS ==========
 
 def extract_numeric(text):
