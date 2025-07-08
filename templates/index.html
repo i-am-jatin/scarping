@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Car Scraper Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      color: #333;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    .tabs {
+      margin-bottom: 20px;
+    }
+
+    .tabs label {
+      display: inline-block;
+      background: #ecf0f1;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tabs input[type="checkbox"] {
+      display: none;
+    }
+
+    .tabs input[type="checkbox"]:checked+label {
+      background: #27ae60;
+      color: white;
+    }
+
+    .form-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+    }
+
+    button {
+      background: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1c5980;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #16a085;
+    }
+
+    .file-list {
+      margin-top: 10px;
+    }
+
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>🚗 Car Scraper Dashboard</h2>
+
+  <div class="form-section">
+    <form id="scraperForm">
+      <div class="tabs">
+        <input type="checkbox" id="yango" name="script" value="yango">
+        <label for="yango">Yango</label>
+
+        <input type="checkbox" id="inygo" name="script" value="inygo">
+        <label for="inygo">Inygo</label>
+
+        <input type="checkbox" id="dubizzle" name="script" value="dubizzle">
+        <label for="dubizzle">Dubizzle</label>
+      </div>
+
+      <label><strong>Upload make_model.csv:</strong></label><br>
+      <input type="file" name="config" accept=".csv" required /><br><br>
+
+      <button type="submit">🚀 Start Scraping</button>
+      <div class="status" id="statusText"></div>
+    </form>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <h3>📥 Output Files</h3>
+  <button onclick="fetchOutputFiles()">🔄 Refresh File List</button>
+  <ul id="fileList" class="file-list"></ul>
+
+  <script>
+    document.getElementById("scraperForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const checkboxes = document.querySelectorAll('input[type=checkbox][name=script]:checked');
+      if (checkboxes.length === 0) {
+        alert("Please select at least one script.");
+        return;
+      }
+
+      const statusText = document.getElementById('statusText');
+      const formData = new FormData();
+
+      // Append scripts
+      let selected = [];
+      checkboxes.forEach(cb => selected.push(cb.value));
+      formData.append('script', selected.join(","));
+
+      // Append uploaded file
+      const fileInput = document.querySelector('input[name="config"]');
+      if (fileInput.files.length > 0) {
+        formData.append('config', fileInput.files[0]);
+      }
+
+      statusText.textContent = "⏳ scraping in progress...";
+
+      const response = await fetch('/run-scraper', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.text();
+      statusText.textContent = result;
+      fetchOutputFiles();
+    });
+
+    async function fetchOutputFiles() {
+      const res = await fetch('/list-outputs');
+      const files = await res.json();
+      const list = document.getElementById('fileList');
+      list.innerHTML = '';
+      files.forEach(file => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="/download/${file}" target="_blank">${file}</a>`;
+        list.appendChild(li);
+      });
+    }
+
+    // Load initial file list
+    fetchOutputFiles();
+  </script>
+
+</body>
+
+</html>
