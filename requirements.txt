@@ -1,0 +1,7 @@
+Flask
+openpyxl
+Werkzeug
+pandas
+beautifulsoup4
+playwright
+pytz
