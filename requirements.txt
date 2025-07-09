@@ -1,6 +1,9 @@
 Flask
-pandas
 openpyxl
-beautifulsoup4
-selenium
 Werkzeug
+pandas
+beautifulsoup4
+playwright
+firefox
+selenium
+pytz

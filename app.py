@@ -46,7 +46,7 @@ def run_scraper():
     # Script map
     scripts = {
         'yango': 'yango_script.py',
-        'inygo': 'inygo_script.py',
+        'invygo': 'invygo_script.py',
         'dubizzle': 'dubizzle_script.py',
     }
       
