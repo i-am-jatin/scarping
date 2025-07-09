@@ -6,3 +6,4 @@ beautifulsoup4
 playwright
 pytz
 pymongo
+nest_asyncio
