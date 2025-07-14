@@ -1,0 +1,36 @@
+2025-07-14 11:15:43,855 - INFO - 🚀 Starting Invygo Scraper
+2025-07-14 11:16:11,150 - INFO - ========== WEEKLY-LISTINGS ==========
+2025-07-14 11:16:11,150 - INFO - [WEEKLY-LISTINGS.1] Starting scrape for https://invygo.com/en-ae/dubai/rent-weekly-cars
+2025-07-14 11:16:11,151 - INFO - [WEEKLY-LISTINGS.2] Attempt 1: Loading page (wait until: load)
+2025-07-14 11:16:11,151 - INFO - [WEEKLY-LISTINGS.3] Successfully scraped 168 listings
+2025-07-14 11:16:11,151 - INFO - [WEEKLY-LISTINGS.4] Filtered to 1 matching listings
+2025-07-14 11:16:11,151 - INFO - [WEEKLY-LISTINGS.5] Starting scrape for https://invygo.com/en-ae/dubai/rent-weekly-nissan-sunny-2023/686005b4660a0af4e1493e06
+2025-07-14 11:16:11,151 - INFO - [WEEKLY-LISTINGS.6] Attempt 1: Loading detail page (wait until: load)
+2025-07-14 11:16:11,152 - INFO - [WEEKLY-LISTINGS.7] Successfully scraped 2 contract options
+2025-07-14 11:16:11,152 - INFO - 
+2025-07-14 11:16:53,643 - INFO - ========== MONTHLY-LISTINGS ==========
+2025-07-14 11:16:53,643 - INFO - [MONTHLY-LISTINGS.1] Starting scrape for https://invygo.com/en-ae/dubai/rent-monthly-cars
+2025-07-14 11:16:53,643 - INFO - [MONTHLY-LISTINGS.2] Attempt 1: Loading page (wait until: load)
+2025-07-14 11:16:53,644 - INFO - [MONTHLY-LISTINGS.3] Successfully scraped 480 listings
+2025-07-14 11:16:53,644 - INFO - [MONTHLY-LISTINGS.4] Filtered to 6 matching listings
+2025-07-14 11:16:53,644 - INFO - [MONTHLY-LISTINGS.5] Starting scrape for https://invygo.com/en-ae/dubai/rent-monthly-nissan-sunny-2023/6874947d3f72a318ce0efcd1
+2025-07-14 11:16:53,644 - INFO - [MONTHLY-LISTINGS.6] Attempt 1: Loading detail page (wait until: domcontentloaded)
+2025-07-14 11:16:53,644 - INFO - [MONTHLY-LISTINGS.7] Successfully scraped 8 contract options
+2025-07-14 11:16:53,645 - INFO - [MONTHLY-LISTINGS.8] Starting scrape for https://invygo.com/en-ae/dubai/rent-monthly-nissan-sunny-2023/686e79b74ccbc177b3f78dc9
+2025-07-14 11:16:53,645 - INFO - [MONTHLY-LISTINGS.9] Attempt 1: Loading detail page (wait until: networkidle)
+2025-07-14 11:16:53,645 - INFO - [MONTHLY-LISTINGS.10] Successfully scraped 8 contract options
+2025-07-14 11:16:53,645 - INFO - [MONTHLY-LISTINGS.11] Starting scrape for https://invygo.com/en-ae/dubai/rent-monthly-nissan-sunny-2023/683ac7928bf6a3563edc6e4c
+2025-07-14 11:16:53,645 - INFO - [MONTHLY-LISTINGS.12] Attempt 1: Loading detail page (wait until: load)
+2025-07-14 11:16:53,646 - INFO - [MONTHLY-LISTINGS.13] Successfully scraped 4 contract options
+2025-07-14 11:16:53,646 - INFO - [MONTHLY-LISTINGS.14] Starting scrape for https://invygo.com/en-ae/dubai/rent-monthly-nissan-sunny-2023/67b414487b46972bbcf560dc
+2025-07-14 11:16:53,646 - INFO - [MONTHLY-LISTINGS.15] Attempt 1: Loading detail page (wait until: domcontentloaded)
+2025-07-14 11:16:53,646 - INFO - [MONTHLY-LISTINGS.16] Successfully scraped 8 contract options
+2025-07-14 11:16:53,646 - INFO - [MONTHLY-LISTINGS.17] Starting scrape for https://invygo.com/en-ae/dubai/rent-monthly-nissan-sunny-2023/6872618c8ea8733b9b03ef46
+2025-07-14 11:16:53,647 - INFO - [MONTHLY-LISTINGS.18] Attempt 1: Loading detail page (wait until: networkidle)
+2025-07-14 11:16:53,647 - INFO - [MONTHLY-LISTINGS.19] Successfully scraped 4 contract options
+2025-07-14 11:16:53,647 - INFO - [MONTHLY-LISTINGS.20] Starting scrape for https://invygo.com/en-ae/dubai/rent-monthly-nissan-sunny-2023/68600357594f27d8e3837123
+2025-07-14 11:16:53,647 - INFO - [MONTHLY-LISTINGS.21] Attempt 1: Loading detail page (wait until: load)
+2025-07-14 11:16:53,647 - INFO - [MONTHLY-LISTINGS.22] Successfully scraped 8 contract options
+2025-07-14 11:16:53,648 - INFO - 
+2025-07-14 11:16:53,945 - INFO - ✅ Successfully saved data to D:\AllScrapper\output\invygo_rentals.xlsx
+2025-07-14 11:16:53,945 - INFO - 📄 Logs saved to D:\AllScrapper\logs\invygo_scraper.log

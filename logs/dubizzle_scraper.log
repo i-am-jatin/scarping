@@ -1,0 +1,22 @@
+2025-07-14 11:16:55,492 - INFO - 🚀 Starting Dubizzle Scraper
+2025-07-14 11:18:05,847 - INFO - ========== NISSAN-SUNNY ==========
+2025-07-14 11:18:05,848 - INFO - [NISSAN-SUNNY.1] Starting scrape for https://dubai.dubizzle.com/motors/rental-cars/nissan/sunny
+2025-07-14 11:18:05,848 - INFO - [NISSAN-SUNNY.2] Attempt 1: Loading page (wait until: domcontentloaded)
+2025-07-14 11:18:05,848 - WARNING - [NISSAN-SUNNY.3] Attempt 1 failed: Locator.inner_html: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#listing-card-wrapper")
+2025-07-14 11:18:05,849 - INFO - [NISSAN-SUNNY.4] Attempt 2: Loading page (wait until: domcontentloaded)
+2025-07-14 11:18:05,849 - INFO - [NISSAN-SUNNY.5] Successfully scraped 22 listings
+2025-07-14 11:18:05,849 - INFO - [NISSAN-SUNNY.6] Filtered to 3 matching listings
+2025-07-14 11:18:05,850 - INFO - [NISSAN-SUNNY.7] Starting scrape for https://dubai.dubizzle.com/motors/rental-cars/nissan/sunny/2024/11/9/latest-nissan-sunny-2023-cheapest-2-357---b03e227195d4472bb82b7e69d2013a68/
+2025-07-14 11:18:05,850 - INFO - [NISSAN-SUNNY.8] Attempt 1: Loading detail page (wait until: load)
+2025-07-14 11:18:05,850 - INFO - [NISSAN-SUNNY.9] Successfully scraped 3 contract options
+2025-07-14 11:18:05,851 - INFO - [NISSAN-SUNNY.10] Starting scrape for https://dubai.dubizzle.com/motors/rental-cars/nissan/sunny/2025/4/22/free-delivery-tabby-available-internationa-2-334---5495c887f566433aa4c04ff346f84cc3/
+2025-07-14 11:18:05,851 - INFO - [NISSAN-SUNNY.11] Attempt 1: Loading detail page (wait until: networkidle)
+2025-07-14 11:18:05,851 - INFO - [NISSAN-SUNNY.12] Successfully scraped 3 contract options
+2025-07-14 11:18:05,851 - INFO - [NISSAN-SUNNY.13] Starting scrape for https://dubai.dubizzle.com/motors/rental-cars/nissan/sunny/2025/6/19/2023-price-inclusive-of-vat-navigation-and-2-448---faef8a320ace42d1a9a80271979d7b0b/
+2025-07-14 11:18:05,852 - INFO - [NISSAN-SUNNY.14] Attempt 1: Loading detail page (wait until: networkidle)
+2025-07-14 11:18:05,852 - INFO - [NISSAN-SUNNY.15] Successfully scraped 2 contract options
+2025-07-14 11:18:05,852 - INFO - 
+2025-07-14 11:18:06,181 - INFO - ✅ Successfully saved data to D:\AllScrapper\output\dubizzle_rentals.xlsx
+2025-07-14 11:18:06,182 - INFO - 📄 Logs saved to D:\AllScrapper\logs\dubizzle_scraper.log
